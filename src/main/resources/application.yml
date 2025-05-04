@@ -15,6 +15,28 @@ spring:
 #        initial-interval: 1000
 #        max-interval: 2000
 
+## uri de gr-conf-swagger-aggregator
+swagger:
+  aggregator:
+    cors:
+      uri: http://localhost:8765
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  show-actuator: false # activer sinon pour voir les endpoints actuator dans le swagger.
+    
+# http://localhost:7778/swagger-ui/index.html
+app:
+  openapi:
+    dev-url: http://localhost:${server.port}
+    homol-url: http://10.0.0.137:${server.port}
+    prod-url: https://prod-url.com
+
+
 
 eureka:
   client:
@@ -22,6 +44,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+    metadata-map:
+      swagger.aggregator.enabled: true  # Indique que ce microservice doit être inclus dans le swagger de 'gr-conf-swagger-aggregator'' (désactiver le sinon sinon).
 
 management:
   endpoints:
@@ -31,19 +55,3 @@ management:
   endpoint:
     health:
       show-details: always
-
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-    operations-sorter: method
-    tags-sorter: alpha
-  show-actuator: true
-  
-# http://localhost:1112/swagger-ui/index.html
-app:
-  openapi:
-    dev-url: http://localhost:${server.port}
-    homol-url: http://10.0.0.137:${server.port}
-    prod-url: https://prod-url.com
