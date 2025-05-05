@@ -10,7 +10,7 @@ package com.chj.gr.config;
 //    @Override
 //    public void addCorsMappings(CorsRegistry registry) {
 //        registry.addMapping("/v3/api-docs/**")
-//                .allowedOrigins("http://localhost:8765")
+//                .allowedOrigins("http://*****:8765")
 //                .allowedMethods("GET");
 //    }
 //}
