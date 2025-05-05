@@ -35,6 +35,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowCredentials(true);
     	
 		/**
+		 * @TO_DELETE
 		 * Permettre toutes les origines (moins sécurisé, à utiliser pour le développement uniquement) :
 		 */
 //    	registry.addMapping("/**").allowedOrigins("*");
