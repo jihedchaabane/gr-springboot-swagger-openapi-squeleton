@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        mvn clean package ${MODULE_PATH}
+                        mvn clean package
                     """
                 }
             }
