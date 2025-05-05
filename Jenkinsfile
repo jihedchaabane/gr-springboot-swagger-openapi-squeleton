@@ -11,7 +11,7 @@ pipeline {
         // Nom du conteneur
         CONTAINER_NAME = 'container-gr-springboot-swagger-openapi-squeleton'
         // Port de l'application
-        APP_PORT = '7775'
+        APP_PORT = '1112'
         // common-network
         DOCKER_NETWORK = 'springboot-network'
         
