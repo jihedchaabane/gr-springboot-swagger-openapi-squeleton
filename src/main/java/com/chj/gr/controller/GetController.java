@@ -1,5 +1,6 @@
 package com.chj.gr.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/api")
 public class GetController {
 
+	@Value("${swagger.aggregator.cors.uri}")
+	private String swaggerAggregatorUri;
+	
+	@GetMapping("/test0")
+	public ResponseEntity<String> test() throws Exception {
+
+		return ResponseEntity.ok("${swagger.aggregator.cors.uri}" + swaggerAggregatorUri);
+	}
+	
+	
+	
     @Operation(summary = "Execute test1", 
 			description = "Execute test1 description")
     @ApiResponses(value = {
