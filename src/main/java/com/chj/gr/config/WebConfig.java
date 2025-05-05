@@ -28,16 +28,16 @@ public class WebConfig implements WebMvcConfigurer {
 	private String swaggerAggregatorUri;		/** "gr-conf-swagger-aggregator". **/
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOrigins(swaggerAggregatorUri)	// Origine de "gr-conf-swagger-aggregator"
-//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-//                .allowedHeaders("*")
-//                .allowCredentials(true);
+        registry.addMapping("/**")
+                .allowedOrigins(swaggerAggregatorUri)	// Origine de "gr-conf-swagger-aggregator"
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     	
 		/**
 		 * Permettre toutes les origines (moins sécurisé, à utiliser pour le développement uniquement) :
 		 */
-    	registry.addMapping("/**").allowedOrigins("*");
+//    	registry.addMapping("/**").allowedOrigins("*");
         
         /**
          * @TODO Didn't work YET depuis gr-conf-swagger-aggregator..
