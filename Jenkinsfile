@@ -5,11 +5,11 @@ pipeline {
     }
     environment {
 		// Chemin du module Spring Boot
-        MODULE_PATH = 'z-springboot-hello'
+        MODULE_PATH = 'gr-springboot-swagger-openapi-squeleton'
         // Nom de l'image Docker
-        DOCKER_IMAGE = 'jihed123/z-springboot-hello:0.0.1-SNAPSHOT'
+        DOCKER_IMAGE = 'jihed123/gr-springboot-swagger-openapi-squeleton:0.0.1-SNAPSHOT'
         // Nom du conteneur
-        CONTAINER_NAME = 'container-z-springboot-hello'
+        CONTAINER_NAME = 'container-gr-springboot-swagger-openapi-squeleton'
         // Port de l'application
         APP_PORT = '7775'
         // common-network
@@ -101,12 +101,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Construire l'image Docker à partir du Dockerfile dans le module
-                    dir(MODULE_PATH) {
-                        sh """
-                            docker build -t ${DOCKER_IMAGE} .
-                        """
-                    }
+                    sh """
+                        docker build -t ${DOCKER_IMAGE} .
+                    """
                 }
             }
         }
