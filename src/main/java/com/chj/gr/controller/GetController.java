@@ -24,7 +24,7 @@ public class GetController {
 	@GetMapping("/test0")
 	public ResponseEntity<String> test() throws Exception {
 
-		return ResponseEntity.ok("${swagger.aggregator.cors.uri}" + swaggerAggregatorUri);
+		return ResponseEntity.ok("${swagger.aggregator.cors.uri} --> " + swaggerAggregatorUri);
 	}
 	
 	
