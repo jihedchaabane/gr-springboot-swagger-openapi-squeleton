@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 	
 	@Value("${swagger.aggregator.cors.uri}")
-	private String swaggerAggregatorUri;		/** Penser à "gr-conf-swagger-aggregator". **/
+	private String swaggerAggregatorUri;		/** "gr-conf-swagger-aggregator". **/
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
@@ -35,7 +35,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowCredentials(true);
         
         /**
-         * Didn't work depuis gr-conf-swagger-aggregator..
+         * @TODO Didn't work YET depuis gr-conf-swagger-aggregator..
          */
         // Configuration explicite pour les endpoints Actuator
         registry.addMapping("/actuator/**")
