@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Execution GET", description = "Endpoints for executing GET operation..")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/squeleton/get")
 public class GetController {
 
 	@Value("${swagger.aggregator.cors.uri}")

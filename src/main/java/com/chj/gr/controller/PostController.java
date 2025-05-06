@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Post Execution", description = "Endpoints for executing POST operations..")
 @RestController
-@RequestMapping("/execute/post")
+@RequestMapping("/squeleton/post")
 public class PostController {
 
     private static final Logger logger = LoggerFactory.getLogger(PostController.class);
