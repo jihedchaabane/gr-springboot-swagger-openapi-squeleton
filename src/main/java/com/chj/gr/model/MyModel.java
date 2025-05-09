@@ -11,7 +11,7 @@ public class MyModel {
 	@Schema(description = "Unique identifier of the Product", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 	
-	@Schema(description = "Data name of the product", example = "product name", required = true, accessMode = Schema.AccessMode.READ_WRITE)
+	@Schema(description = "Name of the product", example = "product name", required = true, accessMode = Schema.AccessMode.READ_WRITE)
     private String name;
     
 	@Schema(description = "Description of the Product", example = "product description", required = true, accessMode = Schema.AccessMode.READ_WRITE)
