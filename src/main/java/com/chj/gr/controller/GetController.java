@@ -1,10 +1,11 @@
 package com.chj.gr.controller;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.chj.gr.properties.SwaggerParamsProperties;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -18,13 +19,16 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/squeleton/get")
 public class GetController {
 
-	@Value("${swagger.aggregator.cors.uri}")
-	private String swaggerAggregatorUri;
+	private SwaggerParamsProperties swaggerParamsProperties;
+	
+    public GetController(SwaggerParamsProperties swaggerParamsProperties) {
+		this.swaggerParamsProperties = swaggerParamsProperties;
+	}
 	
 	@GetMapping("/test0")
 	public ResponseEntity<String> test() throws Exception {
 
-		return ResponseEntity.ok("${swagger.aggregator.cors.uri} --> " + swaggerAggregatorUri);
+		return ResponseEntity.ok(swaggerParamsProperties.toString());
 	}
 	
 	
