@@ -11,7 +11,6 @@ import java.util.List;
 @RefreshScope
 @ConfigurationProperties(prefix = "swagger-params")
 public class SwaggerParamsProperties {
-
 	private String issuerUri;
 	private Servers servers = new Servers();
 	private Aggregator aggregator = new Aggregator();
@@ -50,7 +49,6 @@ public class SwaggerParamsProperties {
 		public void setListe(List<Server> liste) {
 			this.liste = liste;
 		}
-		
 	}
 
 	public static class Server {
@@ -72,12 +70,6 @@ public class SwaggerParamsProperties {
 		public void setDescription(String description) {
 			this.description = description;
 		}
-
-		@Override
-		public String toString() {
-			return "Server [uri=" + uri + ", description=" + description + "]";
-		}
-		
 	}
 
 	public static class Aggregator {
@@ -99,11 +91,6 @@ public class SwaggerParamsProperties {
 		public void setCors(Cors cors) {
 			this.cors = cors;
 		}
-
-		@Override
-		public String toString() {
-			return "Aggregator [enabled=" + enabled + ", " + cors + "]";
-		}
 	}
 
 	public static class Cors {
@@ -116,16 +103,5 @@ public class SwaggerParamsProperties {
 		public void setUri(String uri) {
 			this.uri = uri;
 		}
-
-		@Override
-		public String toString() {
-			return "Cors [uri=" + uri + "]";
-		}
-	}
-	
-	@Override
-	public String toString() {
-		return "SwaggerParamsProperties [issuerUri=" + issuerUri + ", servers=" + servers + ", aggregator=" + aggregator
-				+ "]";
 	}
 }
